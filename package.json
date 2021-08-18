@@ -7,7 +7,6 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack serve --open",
-    "server": "node server.js",
     "build": "webpack"
   },
   "repository": {
@@ -23,12 +22,10 @@
   "homepage": "https://github.com/danmainah/webpack#readme",
   "devDependencies": {
     "css-loader": "^6.2.0",
-    "express": "^4.17.1",
     "html-webpack-plugin": "^5.3.2",
     "style-loader": "^3.2.1",
     "webpack": "^5.50.0",
     "webpack-cli": "^4.8.0",
-    "webpack-dev-middleware": "^3.7.3",
     "webpack-dev-server": "^3.11.2"
   },
   "dependencies": {
