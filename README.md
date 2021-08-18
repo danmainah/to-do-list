@@ -1,6 +1,6 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Enumerables Project
+# To Do List Project
 
 > This project is about Creating a To Do list app that add and deleting tasks and store them in local storage.
 
@@ -9,7 +9,7 @@
 - Javascript 
 - Html 
 - Bootstrap framework for styling
-- CUstom css for additiona styling
+- CUstom css for additional styling
 
 ## Getting Started
 
@@ -26,7 +26,7 @@
 - In your local PC, open your terminal in the folder you would like to clone the repository into
 - Clone the repository with the command: `git clone (copied link)`; like so: `git clone https://github.com/danmainah/to-do-list.git`
 - After the clone, type in the command `cd to-do-list` to access the directory on the terminal
-- In the terminal type npm start and it will load the app in your default browser.
+- In the terminal type `npm start` and it will load the app in your default browser.
 
 ## 👤 **Daniel maina**
 
