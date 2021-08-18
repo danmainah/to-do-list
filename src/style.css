@@ -1,0 +1,17 @@
+body {
+  background-color: bisque;
+}
+
+#clear {
+  margin-top: -20px;
+}
+
+.block {
+  display: block;
+  width: 100%;
+  border: none;
+  padding: 14px 28px;
+  font-size: 16px;
+  cursor: pointer;
+  text-align: center;
+}
