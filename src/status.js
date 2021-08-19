@@ -1,9 +1,10 @@
+/* eslint-disable import/prefer-default-export, no-undef */
 const getTasks = JSON.parse(localStorage.getItem('tasks'));
 
 export const checkbox = () => {
   list.addEventListener('change', (ev) => {
     const todoObject = getTasks.find(
-      (todo) => todo.index === Number(ev.target.parentNode.id)
+      (todo) => todo.index === Number(ev.target.parentNode.id),
     );
     const index = getTasks.indexOf(todoObject);
     if (!getTasks[index].isCompleted) {
@@ -18,3 +19,4 @@ export const checkbox = () => {
     }
   });
 };
+/* eslint-enable import/prefer-default-export, no-undef */
