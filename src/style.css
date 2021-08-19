@@ -16,15 +16,13 @@ body {
   text-align: center;
 }
 
-ul li.checked {
-  background: #888;
-  color: #fff;
+.checked {
+  color: black;
   text-decoration: line-through;
 }
 
 /* Add a "checked" mark when clicked on */
-ul li.checked::before {
-  content: '';
+.checked::before {
   position: absolute;
   border-color: #fff;
   border-style: solid;

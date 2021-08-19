@@ -22,17 +22,15 @@ if (localStorage.length === 0) {
 }
 const getTasks = JSON.parse(localStorage.getItem('tasks'));
 
-export default class ToDoList {
-  constructor() {
-    this.getTasks = [];
-  }
-}
-
 export const displaylist = () => {
   getTasks.forEach((task) => {
     const li = document.createElement('li');
-    const text = `<div> 
-    ${task.description}</div>`;
+    const text = `<div id='${task.index}'> <input type ='checkbox' ${
+      task.isCompleted ? 'checked' : ''
+    }> 
+    <span class='${task.isCompleted ? 'checked' : ''}'>${
+      task.description
+    }</span> </div>`;
     li.classList.add('list-group-item');
     li.innerHTML = text;
     ul.appendChild(li);
