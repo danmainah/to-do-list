@@ -28,9 +28,8 @@ export const displaylist = () => {
     const text = `<div id='${task.index}'> <input type ='checkbox' ${
       task.isCompleted ? 'checked' : ''
     }> 
-    <span class='${task.isCompleted ? 'checked' : ''}'>${
-      task.description
-    }</span> </div>`;
+    <span class='${task.isCompleted ? 'checked' : ''}'>${task.description}
+    </span></div>`;
     li.classList.add('list-group-item');
     li.innerHTML = text;
     ul.appendChild(li);

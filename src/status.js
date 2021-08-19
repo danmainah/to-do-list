@@ -5,7 +5,7 @@ export const checkbox = () => {
     const todoObject = getTasks.find(
       (todo) => todo.index === Number(ev.target.parentNode.id)
     );
-    let index = getTasks.indexOf(todoObject);
+    const index = getTasks.indexOf(todoObject);
     if (!getTasks[index].isCompleted) {
       getTasks[index].isCompleted = true;
       ev.target.parentNode.children[1].classList.add('checked');
