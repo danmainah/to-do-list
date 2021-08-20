@@ -1,12 +1,16 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './style.css';
+import  checkbox  from './status';
 import editTask from './edittask';
 import addtodo from './addtask';
 import deletetask from './deletetask';
+import clearTask from './clearcompleted';
 
 const tasks = [];
 const list = document.getElementById('list');
 const addtask = document.querySelector('#addtask');
+const clearCompleted = document.querySelector('#clearCompleted');
+
 
  const display = () => {
 const data =localStorage.getItem('tasks');
@@ -64,6 +68,12 @@ addtask.addEventListener('keypress', (e) => {
       addtask.value = '';
       display();
     }
-  
   });
+
+  clearCompleted.addEventListener('click', () => {
+    clearTask();
+    list.innerHTML = '';
+    display();
+  });
+
   
