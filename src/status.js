@@ -1,10 +1,8 @@
 /* eslint-disable import/prefer-default-export, no-undef, comma-dangle */
-
-
 export default (ev) => {
   const getTasks = JSON.parse(localStorage.getItem('tasks'));
   const todoObject = getTasks.find(
-    (todo) => todo.index === Number(ev.target.parentNode.id),
+    (todo) => todo.index === Number(ev.target.parentNode.id)
   );
   const index = getTasks.indexOf(todoObject);
   if (!getTasks[index].isCompleted) {
