@@ -1,10 +1,10 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './style.css';
-import checkbox from './status';
-import editTask from './edittask';
-import addtodo from './addtask';
-import deletetask from './deletetask';
-import clearTask from './clearcompleted';
+import checkbox from './status.js';
+import editTask from './edittask.js';
+import addtodo from './addtask.js';
+import deletetask from './deletetask.js';
+import clearTask from './clearcompleted.js';
 
 const tasks = [];
 const list = document.getElementById('list');
@@ -17,13 +17,11 @@ const display = () => {
     JSON.parse(data).forEach((task) => {
       const li = document.createElement('li');
       const text = `<div class = "row" id='${task.index}'> 
-        <input class = 'ticks col-1' type ='checkbox' ${
-          task.isCompleted ? 'checked' : ''
-        } /> 
-        <div class='description col-10 ${
-          task.isCompleted ? 'checked' : ''
-        }'contenteditable="${!task.completed}"> ${task.description}
-        </div>
+      <input class = 'ticks col-1' type ='checkbox' 
+      ${task.isCompleted ? 'checked' : ''} /> 
+      <div class='description col-10 ${task.isCompleted ? 'checked' : ''}
+      'contenteditable="${!task.completed}"> ${task.description}
+      </div>
       <span class="badge bg-danger rounded-pill col-1 deletebutton "><i class="fa fa-trash"></i></span>
       </div>`;
       li.classList.add('list-group-item');
@@ -31,7 +29,7 @@ const display = () => {
       list.appendChild(li);
     });
   }
-  let ticks = document.querySelectorAll('.ticks');
+  const ticks = document.querySelectorAll('.ticks');
   ticks.forEach((tick) => {
     tick.addEventListener('change', (ev) => {
       checkbox(ev);
@@ -49,7 +47,7 @@ const display = () => {
     });
   });
 
-  let deletebutton = document.querySelectorAll('.deletebutton');
+  const deletebutton = document.querySelectorAll('.deletebutton');
   deletebutton.forEach((tick) => {
     tick.addEventListener('click', (ev) => {
       deletetask(ev);
