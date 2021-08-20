@@ -1,6 +1,51 @@
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './style.css';
-import { displaylist } from './display.js';
-import { checkbox } from './status.js';
+import editTask from './edittask';
 
-displaylist();
-checkbox();
+
+const tasks = [];
+const list = document.getElementById('list');
+
+
+ const display = () => {
+const data =localStorage.getItem('tasks');
+  if (data) {
+    JSON.parse(data).forEach((task) => {
+        const li = document.createElement('li');
+        const text = 
+        `<div class = "row" id='${task.index}'> 
+        <input class = 'ticks col-1' type ='checkbox' ${
+          task.isCompleted ? 'checked' : '' } /> 
+        <div class='description col-10 ${task.isCompleted ? 'checked' : ''}'contenteditable="${!task.completed}"> ${task.description}
+        </div>
+      <span class="badge bg-danger rounded-pill col-1 deletebutton "><i class="fa fa-trash"></i></span>
+      </div>`;
+        li.classList.add('list-group-item');
+        li.innerHTML = text;
+        list.appendChild(li);
+      });
+  }
+ let ticks = document.querySelectorAll('.ticks');
+ ticks.forEach(tick =>{
+   
+    tick.addEventListener('change', (ev) => {
+        checkbox(ev);
+      });
+ });
+
+ const editButtons = document.querySelectorAll('.description');
+ editButtons.forEach((btn) => {
+   btn.addEventListener('keypress', (e) => {
+     if (e.key === 'Enter') {
+       editTask(e);
+       list.innerHTML = '';
+       display();
+     }
+   });
+ });
+
+ 
+};
+
+
+  
