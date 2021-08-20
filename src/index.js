@@ -1,11 +1,12 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './style.css';
 import editTask from './edittask';
+import addtodo from './addtask';
 
 
 const tasks = [];
 const list = document.getElementById('list');
-
+const addtask = document.querySelector('#addtask');
 
  const display = () => {
 const data =localStorage.getItem('tasks');
@@ -47,5 +48,15 @@ const data =localStorage.getItem('tasks');
  
 };
 
-
+display();
+addtask.addEventListener('keypress', (e) => {
+    
+    if (e.key === 'Enter' && addtask.value) {
+      addtodo(tasks);
+      list.innerHTML = '';
+      addtask.value = '';
+      display();
+    }
+  
+  });
   
