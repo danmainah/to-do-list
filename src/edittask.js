@@ -1,3 +1,4 @@
+/* eslint-disable  no-undef, comma-dangle */
 export default (e) => {
   const data = localStorage.getItem('tasks');
   const taskArrays = JSON.parse(data);
@@ -8,3 +9,4 @@ export default (e) => {
   taskArrays[index].description = e.target.textContent;
   localStorage.setItem('tasks', JSON.stringify(taskArrays));
 };
+/* eslint-enable  no-undef, comma-dangle */

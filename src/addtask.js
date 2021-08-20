@@ -1,3 +1,4 @@
+/* eslint-disable  no-undef, comma-dangle */
 export default (tasks) => {
   tasks.push({
     description: addtask.value,
@@ -6,3 +7,4 @@ export default (tasks) => {
   });
   localStorage.setItem('tasks', JSON.stringify(tasks));
 };
+/* eslint-enable  no-undef, comma-dangle */
