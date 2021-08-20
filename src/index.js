@@ -2,7 +2,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './style.css';
 import editTask from './edittask';
 import addtodo from './addtask';
-
+import deletetask from './deletetask';
 
 const tasks = [];
 const list = document.getElementById('list');
@@ -45,7 +45,14 @@ const data =localStorage.getItem('tasks');
    });
  });
 
- 
+ let deletebutton = document.querySelectorAll('.deletebutton');
+ deletebutton.forEach(tick =>{
+    tick.addEventListener('click', (ev) => {
+        deletetask(ev);
+        list.innerHTML = '';
+        display();
+      });
+ })
 };
 
 display();
