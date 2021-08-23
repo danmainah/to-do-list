@@ -11,6 +11,10 @@
 - Bootstrap framework for styling
 - CUstom css for additional styling
 
+## Live Demo
+
+[Live Demo Link](https://danmainah.github.io/to-do-list/)
+
 ## Getting Started
 
  ### Prerequisites
